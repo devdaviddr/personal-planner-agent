@@ -1,0 +1,10 @@
+planner.db
+planner.db-journal
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.DS_Store
+.idea/
+.vscode/
