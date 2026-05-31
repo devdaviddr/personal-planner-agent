@@ -7,7 +7,7 @@ trim_to_user_boundary keeping the history valid for tool-calling APIs.
 import json
 import sqlite3
 
-HISTORY_LIMIT = 40  # rough turn budget — bump for longer agents
+HISTORY_LIMIT = 20  # rough turn budget — bump for longer agents
 
 
 def save_message(db: sqlite3.Connection, session: str, msg: dict) -> None:

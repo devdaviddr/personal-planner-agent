@@ -1,0 +1,48 @@
+2026-06-01 06:39:46,170 INFO httpx: HTTP Request: POST http://192.168.4.90:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-01 06:39:50,062 INFO httpx: HTTP Request: POST http://192.168.4.90:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-01 06:39:53,063 INFO httpx: HTTP Request: POST http://192.168.4.90:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-01 06:39:55,488 INFO httpx: HTTP Request: POST http://192.168.4.90:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-01 06:40:03,885 INFO httpx: HTTP Request: POST http://192.168.4.90:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-01 06:40:05,521 INFO httpx: HTTP Request: POST http://192.168.4.90:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-01 06:40:06,957 INFO httpx: HTTP Request: POST http://192.168.4.90:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-01 06:40:12,896 INFO httpx: HTTP Request: POST http://192.168.4.90:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-01 06:40:17,403 INFO httpx: HTTP Request: POST http://192.168.4.90:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-01 06:40:18,938 INFO httpx: HTTP Request: POST http://192.168.4.90:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-01 06:41:19,484 INFO httpx: HTTP Request: POST http://192.168.4.90:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-01 06:41:21,093 INFO httpx: HTTP Request: POST http://192.168.4.90:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-01 06:41:23,039 INFO httpx: HTTP Request: POST http://192.168.4.90:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-01 06:42:14,072 INFO httpx: HTTP Request: POST http://192.168.4.90:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-01 06:42:15,951 INFO httpx: HTTP Request: POST http://192.168.4.90:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-01 06:42:17,311 INFO httpx: HTTP Request: POST http://192.168.4.90:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-01 06:42:52,034 INFO httpx: HTTP Request: POST http://192.168.4.90:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-01 06:42:54,176 INFO httpx: HTTP Request: POST http://192.168.4.90:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-01 06:42:55,609 INFO httpx: HTTP Request: POST http://192.168.4.90:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-01 06:43:18,558 INFO httpx: HTTP Request: POST http://192.168.4.90:11434/api/chat "HTTP/1.1 200 OK"
+2026-06-01 06:56:13,142 ERROR agent: tool list_tasks failed with args={'status': 'all'}
+Traceback (most recent call last):
+  File "/Users/danieldavid/personal-planner-agent/agent.py", line 71, in _dispatch
+    result = TOOLS[name]["fn"](**args)
+  File "/Users/danieldavid/personal-planner-agent/tools.py", line 112, in list_tasks
+    rows = db.execute(
+           ~~~~~~~~~~^
+        "SELECT id, title, due_date, status FROM tasks "
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "ORDER BY status, due_date IS NULL, due_date",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ).fetchall()
+    ^
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 8325175488 and this is thread id 6174552064.
+2026-06-01 06:56:15,189 ERROR agent: tool list_tasks failed with args={'status': 'all'}
+Traceback (most recent call last):
+  File "/Users/danieldavid/personal-planner-agent/agent.py", line 71, in _dispatch
+    result = TOOLS[name]["fn"](**args)
+  File "/Users/danieldavid/personal-planner-agent/tools.py", line 112, in list_tasks
+    rows = db.execute(
+           ~~~~~~~~~~^
+        "SELECT id, title, due_date, status FROM tasks "
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "ORDER BY status, due_date IS NULL, due_date",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ).fetchall()
+    ^
+sqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 8325175488 and this is thread id 6174552064.
